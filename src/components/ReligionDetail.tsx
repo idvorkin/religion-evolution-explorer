@@ -20,6 +20,11 @@ export function ReligionDetail({ religion, onClose }: ReligionDetailProps) {
     ? religions.find((r) => r.id === religion.parentId)
     : null;
 
+  // Find siblings (other religions with the same parent)
+  const siblings = religion.parentId
+    ? religions.filter((r) => r.parentId === religion.parentId && r.id !== religion.id)
+    : [];
+
   return (
     <div className="religion-detail">
       <button className="close-button" onClick={onClose}>
@@ -53,6 +58,13 @@ export function ReligionDetail({ religion, onClose }: ReligionDetailProps) {
             </span>
           </div>
         )}
+
+        {religion.forkReason && parent && (
+          <div className="fork-reason">
+            <span className="fork-reason-label">Why it branched:</span>
+            <span className="fork-reason-text">{religion.forkReason}</span>
+          </div>
+        )}
       </div>
 
       <div className="detail-concepts">
@@ -71,6 +83,12 @@ export function ReligionDetail({ religion, onClose }: ReligionDetailProps) {
 
           if (!view) return null;
 
+          // Find siblings that differ on this concept
+          const differingSiblings = siblings.filter((sib) => {
+            const sibView = sib.concepts[concept.id];
+            return sibView && isDifferent(view?.summary, sibView?.summary);
+          });
+
           return (
             <div
               key={concept.id}
@@ -88,6 +106,19 @@ export function ReligionDetail({ religion, onClose }: ReligionDetailProps) {
                     ↑ {parent.name}:
                   </span>{" "}
                   {parentView.summary}
+                </div>
+              )}
+              {differingSiblings.length > 0 && (
+                <div className="sibling-comparisons">
+                  <div className="sibling-comparisons-label">Compare to siblings:</div>
+                  {differingSiblings.map((sib) => (
+                    <div key={sib.id} className="sibling-comparison">
+                      <span className="sibling-label" style={{ color: sib.color }}>
+                        ↔ {sib.name}:
+                      </span>{" "}
+                      {sib.concepts[concept.id]?.summary}
+                    </div>
+                  ))}
                 </div>
               )}
               {view.details && (

@@ -18,6 +18,7 @@ export interface Religion {
   founder?: string;
   adherents?: number; // millions
   color: string;
+  forkReason?: string; // Why this branched from parent
   concepts: Record<string, ConceptView>;
 }
 
@@ -134,6 +135,7 @@ export const religions: Religion[] = [
     founder: "Jesus of Nazareth",
     adherents: 50, // early movement
     color: "#7C3AED",
+    forkReason: "Belief that Jesus was the Messiah and divine Son of God; salvation through faith in Christ",
     concepts: {
       hell: {
         summary: "Eternal separation from God; debated nature",
@@ -185,6 +187,7 @@ export const religions: Religion[] = [
     founder: "Constantine/Church Councils",
     adherents: 1300,
     color: "#DC2626",
+    forkReason: "Institutionalization under Rome; papal authority, sacramental system, and Church tradition as sources of doctrine",
     concepts: {
       hell: {
         summary: "Eternal conscious separation from God",
@@ -236,6 +239,7 @@ export const religions: Religion[] = [
     founder: "Great Schism",
     adherents: 220,
     color: "#059669",
+    forkReason: "Great Schism: rejected papal supremacy; emphasis on theosis, conciliar authority, and Eastern liturgical tradition",
     concepts: {
       hell: {
         summary: "Experience of God's love as torment for the unrepentant",
@@ -287,6 +291,7 @@ export const religions: Religion[] = [
     founder: "Ecumenical Patriarchate",
     adherents: 20,
     color: "#0D9488",
+    forkReason: "Continuation of Byzantine Greek tradition; Ecumenical Patriarchate as 'first among equals'",
     concepts: {
       hell: {
         summary: "Experience of God's love as fire for the unprepared",
@@ -338,6 +343,7 @@ export const religions: Religion[] = [
     founder: "Prince Vladimir of Kiev",
     adherents: 100,
     color: "#047857",
+    forkReason: "Slavic mission and independent Moscow Patriarchate; 'Third Rome' theology after Constantinople fell",
     concepts: {
       hell: {
         summary: "Separation from God's grace; self-chosen",
@@ -389,6 +395,7 @@ export const religions: Religion[] = [
     founder: "St. Mark the Evangelist (tradition)",
     adherents: 20,
     color: "#7C3AED",
+    forkReason: "Rejected Council of Chalcedon; miaphysite Christology (one united nature of Christ)",
     concepts: {
       hell: {
         summary: "Eternal separation; prayers for mercy",
@@ -440,6 +447,7 @@ export const religions: Religion[] = [
     founder: "Martin Luther",
     adherents: 400,
     color: "#EA580C",
+    forkReason: "95 Theses against indulgences; sola scriptura, sola fide, sola gratia; rejected papal authority and sacramental system",
     concepts: {
       hell: {
         summary: "Eternal punishment; varies by denomination",
@@ -491,6 +499,7 @@ export const religions: Religion[] = [
     founder: "Great Awakening movements",
     adherents: 300,
     color: "#F59E0B",
+    forkReason: "Revival movements emphasizing personal conversion, born-again experience, and evangelism",
     concepts: {
       hell: {
         summary: "Literal eternal conscious torment",
@@ -542,6 +551,7 @@ export const religions: Religion[] = [
     founder: "Martin Luther",
     adherents: 80,
     color: "#8B5CF6",
+    forkReason: "Luther's original reformation; retained liturgy and real presence while rejecting papal authority",
     concepts: {
       hell: {
         summary: "Eternal separation from God",
@@ -593,6 +603,7 @@ export const religions: Religion[] = [
     founder: "Henry VIII / Thomas Cranmer",
     adherents: 85,
     color: "#0EA5E9",
+    forkReason: "Henry VIII's break from Rome over annulment; 'via media' between Catholic and Protestant",
     concepts: {
       hell: {
         summary: "Varies widely; eternal separation or remedial",
@@ -644,6 +655,7 @@ export const religions: Religion[] = [
     founder: "John Smyth / Thomas Helwys",
     adherents: 100,
     color: "#EF4444",
+    forkReason: "Believer's baptism only (rejecting infant baptism); local church autonomy; separation of church and state",
     concepts: {
       hell: {
         summary: "Eternal conscious punishment for unbelievers",
@@ -695,6 +707,7 @@ export const religions: Religion[] = [
     founder: "John Wesley",
     adherents: 80,
     color: "#14B8A6",
+    forkReason: "Wesley's revival movement; emphasis on personal holiness, sanctification, and 'heart strangely warmed'",
     concepts: {
       hell: {
         summary: "Real but God's grace extends to all",
@@ -746,6 +759,7 @@ export const religions: Religion[] = [
     founder: "Charles Parham / Azusa Street Revival",
     adherents: 280,
     color: "#F97316",
+    forkReason: "Azusa Street Revival; Holy Spirit baptism with speaking in tongues; continuation of apostolic gifts",
     concepts: {
       hell: {
         summary: "Literal eternal fire and torment",
@@ -797,6 +811,7 @@ export const religions: Religion[] = [
     founder: "Prophet Muhammad",
     adherents: 1900,
     color: "#10B981",
+    forkReason: "Muhammad as final prophet; Quran as uncorrupted revelation; Jesus as prophet (not divine); strict monotheism",
     concepts: {
       hell: {
         summary: "Jahannam - may be temporary for Muslims, eternal for others",
@@ -848,6 +863,7 @@ export const religions: Religion[] = [
     founder: "Followers of Abu Bakr",
     adherents: 1600,
     color: "#22C55E",
+    forkReason: "Succession through elected caliphs (Abu Bakr); emphasis on consensus and Sunnah of the Prophet",
     concepts: {
       hell: {
         summary: "Jahannam with levels; intercession possible",
@@ -899,6 +915,7 @@ export const religions: Religion[] = [
     founder: "Followers of Ali",
     adherents: 250,
     color: "#84CC16",
+    forkReason: "Succession through Ali and Prophet's family (Ahl al-Bayt); Imams as divinely guided leaders",
     concepts: {
       hell: {
         summary: "Jahannam; Imams can intercede",
@@ -950,6 +967,7 @@ export const religions: Religion[] = [
     founder: "Various mystics (Rabi'a, al-Hallaj, Rumi)",
     adherents: 150,
     color: "#A855F7",
+    forkReason: "Mystical inner path; seeking direct experience of divine love; union with God (fana)",
     concepts: {
       hell: {
         summary: "Separation from the Beloved; love transcends fear",
@@ -1001,6 +1019,7 @@ export const religions: Religion[] = [
     founder: "Abraham Geiger / Isaac Mayer Wise",
     adherents: 2,
     color: "#3B82F6",
+    forkReason: "Adapting Judaism to modernity; ethical monotheism over ritual; personal autonomy in observance",
     concepts: {
       hell: {
         summary: "De-emphasized; focus on ethical living now",
@@ -1052,6 +1071,7 @@ export const religions: Religion[] = [
     founder: "Solomon Schechter",
     adherents: 1.5,
     color: "#6366F1",
+    forkReason: "Middle path between Reform and Orthodox; tradition evolves through scholarship while maintaining halacha",
     concepts: {
       hell: {
         summary: "Traditional Gehenna; purification not eternal",
@@ -1103,6 +1123,7 @@ export const religions: Religion[] = [
     founder: "Response to Reform (Chatam Sofer, etc.)",
     adherents: 2,
     color: "#1D4ED8",
+    forkReason: "Resistance to Reform; 'the new is forbidden by Torah'; strict adherence to traditional halacha",
     concepts: {
       hell: {
         summary: "Gehenna for purification up to 12 months",

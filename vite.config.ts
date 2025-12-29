@@ -6,7 +6,7 @@ import { VitePWA } from "vite-plugin-pwa";
 export default defineConfig({
   base: "/",
   server: {
-    allowedHosts: [".ts.net"],
+    allowedHosts: true,
   },
   plugins: [
     react(),
