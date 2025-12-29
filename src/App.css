@@ -181,6 +181,25 @@ body {
   font-weight: 700;
 }
 
+.fork-reason {
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  background: linear-gradient(135deg, #172554 0%, #1e293b 100%);
+  border-left: 3px solid #3b82f6;
+  border-radius: 0 8px 8px 0;
+  font-size: 0.9rem;
+}
+
+.fork-reason-label {
+  color: #60a5fa;
+  font-weight: 600;
+  margin-right: 0.5rem;
+}
+
+.fork-reason-text {
+  color: #e2e8f0;
+}
+
 .detail-concepts {
   display: grid;
   gap: 1rem;
@@ -271,6 +290,40 @@ body {
 }
 
 .parent-label {
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+.sibling-comparisons {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px dashed #334155;
+}
+
+.sibling-comparisons-label {
+  color: #64748b;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.5rem;
+}
+
+.sibling-comparison {
+  background: #0f172a;
+  border-left: 3px solid #475569;
+  padding: 0.5rem 0.75rem;
+  margin-bottom: 0.5rem;
+  border-radius: 0 6px 6px 0;
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+.sibling-comparison:last-child {
+  margin-bottom: 0;
+}
+
+.sibling-label {
   font-weight: 600;
   font-size: 0.8rem;
 }
